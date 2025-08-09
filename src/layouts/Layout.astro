@@ -1,0 +1,25 @@
+---
+//  archivo: src/layouts/Layout.astro
+
+// 👇 Fíjate que la ruta coincide con tu estructura de carpetas
+import '../styles/tailwind.css';
+
+// Esto permite que cada página tenga un título diferente
+export interface Props {
+	title: string;
+}
+const { title } = Astro.props;
+---
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Sitio web de Inmobiliaria INMO-WEB" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{title} | INMO-WEB</title>
+	</head>
+	<body class="bg-slate-50"> {/* Ejemplo de clase de Tailwind en el body */}
+		<slot /> {/* Aquí se insertará el contenido de cada página */}
+	</body>
+</html>
