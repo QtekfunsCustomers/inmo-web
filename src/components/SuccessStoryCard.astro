@@ -1,0 +1,16 @@
+---
+// src/components/SuccessStoryCard.astro
+export interface Props {
+  imgSrc: string;
+  title: string;
+  description: string;
+}
+const { imgSrc, title, description } = Astro.props;
+---
+<div class="bg-white rounded-lg shadow-lg overflow-hidden border border-slate-200 flex flex-col">
+  <img src={imgSrc} alt={`Caso de éxito: ${title}`} class="w-full h-75 object-cover">
+  <div class="p-6 flex-grow flex flex-col">
+    <h3 class="text-2xl font-bold text-slate-900 mb-3">{title}</h3>
+    <p class="text-slate-600 text-base flex-grow">{description}</p>
+  </div>
+</div>

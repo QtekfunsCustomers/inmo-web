@@ -1,79 +1,106 @@
 ---
 // archivo: src/pages/index.astro
 import Layout from "../layouts/Layout.astro";
-import PropertyCard from '../components/PropertyCard.astro';
-import LeadForm from "../components/LeadForm.astro"; // <-- IMPORTANTE: Añadimos la importación del formulario
+import SuccessStoryCard from "../components/SuccessStoryCard.astro";
+import LeadForm from "../components/LeadForm.astro";
 ---
 
 <Layout title="Inversiones Inmobiliarias de Alto Valor">
-
-  <section class="relative h-[80vh] w-full bg-gray-600">
-    <img src="/images/hero-background.jpg" alt="Edificio corporativo moderno" class="absolute inset-0 w-full h-full object-cover">
-    <div class="relative h-full flex items-center justify-start container mx-auto px-4">
-      <div class="bg-white/95 backdrop-blur-sm p-8 md:p-12 rounded-lg max-w-xl">
-        <h1 class="text-4xl md:text-5xl font-bold text-slate-900 leading-tight mb-4">La Inversión Inmobiliaria que Impulsa su Crecimiento</h1>
-        <p class="text-lg text-slate-600 mb-8">Especialistas en la localización y gestión de activos comerciales de alto rendimiento.</p>
-        <div class="flex gap-4">
-          <a href="#propiedades" class="bg-blue-800 hover:bg-blue-900 text-white font-bold py-3 px-6 rounded-md">Ver Propiedades</a>
-          <a href="#contacto" class="bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold py-3 px-6 rounded-md">Contactar</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="propiedades" class="py-20 bg-slate-100">
-    <div class="container mx-auto px-4">
-      <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold text-slate-800">Propiedades Destacadas</h2>
-        <p class="text-lg text-slate-500 mt-2">Una selección de nuestras mejores oportunidades de inversión.</p>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <PropertyCard
-          imgSrc="/images/edificio1.jpg"
-          category="Edificio de Oficinas"
-          title="Edificio Bulevar Central"
-          location="Paseo de la Castellana, Madrid"
-          price="12.000.000 €"
+    <section class="relative h-[50vh] w-full bg-gray-600">
+        <img
+            src="/images/hero-background.jpg"
+            alt="Edificio corporativo moderno"
+            class="absolute inset-0 w-full h-full object-cover"
         />
-        <PropertyCard
-          imgSrc="/images/local1.jpg"
-          category="Local Comercial"
-          title="Local en Esquina Gran Vía"
-          location="Calle Gran Vía, Madrid"
-          price="2.500.000 €"
-        />
-        <PropertyCard
-          imgSrc="/images/edificio2.jpg"
-          category="Edificio Residencial"
-          title="Edificio Clásico en Salamanca"
-          location="Barrio de Salamanca, Madrid"
-          price="8.500.000 €"
-        />
-      </div>
-    </div>
-  </section>
-
-  <section id="contacto" class="py-20 bg-white">
-    <div class="container mx-auto px-4">
-      <div class="grid lg:grid-cols-2 gap-12 items-center">
-
-        <div class="prose prose-lg max-w-none">
-          <h2 class="text-4xl font-bold text-slate-900">Expertos en el Sector Inmobiliario Comercial</h2>
-          <p>Un servicio de calidad, serio, eficaz, transparente y enfocado al cliente, con el objetivo de ayudarle en su necesidad.</p>
-          <ul>
-            <li>Más de 20 años de experiencia en el sector.</li>
-            <li>Acceso a oportunidades de inversión exclusivas.</li>
-            <li>Asesoramiento integral durante todo el proceso.</li>
-          </ul>
-          <p><strong>Y solo pagas, si conseguimos tu objetivo.</strong></p>
+        <div
+            class="relative h-full flex items-center justify-start container mx-auto px-4"
+        >
+            <div
+                class="bg-white/95 backdrop-blur-sm p-8 md:p-12 rounded-lg max-w-xl"
+            >
+                <h1
+                    class="text-4xl md:text-5xl font-bold text-slate-900 leading-tight mb-4"
+                >
+                    La Inversión Inmobiliaria que Impulsa su Crecimiento
+                </h1>
+                <p class="text-lg text-slate-600 mb-8">
+                    Especialistas en la localización y gestión de activos
+                    comerciales de alto rendimiento.
+                </p>
+                <div class="flex gap-4">
+                    <a
+                        href="#propiedades"
+                        class="bg-blue-800 hover:bg-blue-900 text-white font-bold py-3 px-6 rounded-md"
+                        >Ver Propiedades</a
+                    >
+                    <a
+                        href="#contacto"
+                        class="bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold py-3 px-6 rounded-md"
+                        >Contactar</a
+                    >
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div>
-          <LeadForm />
+    <section id="casos-de-exito" class="py-20 bg-slate-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-slate-800">
+                    Casos de Éxito
+                </h2>
+                <p class="text-lg text-slate-500 mt-2">
+                    Nuestra experiencia y resultados nos avalan.
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <SuccessStoryCard
+                    imgSrc="/images/casos-exito/edificio-oficinas-madrid.jpg"
+                    title="Edificio de oficinas en Madrid"
+                    description="Cliente buscaba un edificio de oficinas con inquilinos de primer nivel y rentabilidad asegurada. Se encontró el activo, se negoció y se cerró la operación en menos de 2 meses."
+                />
+                <SuccessStoryCard
+                    imgSrc="/images/casos-exito/local-comercial-valencia.jpg"
+                    title="Local comercial en Valencia"
+                    description="Importante empresa de moda buscaba un local de referencia en Valencia. Encontramos un local que no estaba en el mercado y negociamos la operación de alquiler."
+                />
+                <SuccessStoryCard
+                    imgSrc="/images/casos-exito/local-comercial-madrid.jpg"
+                    title="Local comercial en rentabilidad"
+                    description="Family office buscaba un local comercial alquilado a una empresa de primer nivel y con un contrato de obligado cumplimiento de más de 10 años. Operación cerrada en 1 mes."
+                />
+            </div>
         </div>
+    </section>
 
-      </div>
-    </div>
-  </section>
+    <section id="contacto" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="prose prose-lg max-w-none">
+                    <h2 class="text-4xl font-bold text-slate-900">
+                        Expertos en el Sector Inmobiliario Comercial
+                    </h2>
+                    <p>
+                        Un servicio de calidad, serio, eficaz, transparente y
+                        enfocado al cliente, con el objetivo de ayudarle en su
+                        necesidad.
+                    </p>
+                    <ul>
+                        <li>Más de 20 años de experiencia en el sector.</li>
+                        <li>Acceso a oportunidades de inversión exclusivas.</li>
+                        <li>Asesoramiento integral durante todo el proceso.</li>
+                    </ul>
+                    <p>
+                        <strong
+                            >Y solo pagas, si conseguimos tu objetivo.</strong
+                        >
+                    </p>
+                </div>
 
+                <div>
+                    <LeadForm />
+                </div>
+            </div>
+        </div>
+    </section>
 </Layout>
