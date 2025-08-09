@@ -2,7 +2,7 @@
 //  archivo: src/layouts/Layout.astro
 
 // 👇 Fíjate que la ruta coincide con tu estructura de carpetas
-import '../styles/global.css'
+import "../styles/global.css";
 
 // Esto permite que cada página tenga un título diferente
 export interface Props {
@@ -48,7 +48,11 @@ const { title } = Astro.props;
                 class="container mx-auto px-4 py-3 flex justify-between items-center"
             >
                 <a href="/">
-                    <img src="/images/logoInmospainWeb.png" alt="Logo de Inmo-Web" class="h-10 w-auto">
+                    <img
+                        src="/images/logoInmospainWeb.png"
+                        alt="Logo de Inmo-Web"
+                        class="h-10 w-auto"
+                    />
                 </a>
                 <div>
                     <a href="/" class="px-3 hover:text-blue-700">Inicio</a>
@@ -61,5 +65,42 @@ const { title } = Astro.props;
 
         <slot />
         {/* Aquí se insertará el contenido de cada página */}
+        <footer class="bg-slate-900 text-slate-400">
+            <div class="container mx-auto px-4 py-8">
+                <div
+                    class="flex flex-col md:flex-row justify-between items-center text-center md:text-left gap-4"
+                >
+                    {/* Copyright */}
+                    <p class="text-sm">
+                        &copy; {new Date().getFullYear()} Inmospain Servicios Inmobiliarios
+                        S.L. Todos los derechos reservados.
+                    </p>
+
+                    {/* Enlaces a Políticas */}
+                    <nav>
+                        <ul class="flex gap-4 md:gap-6 text-sm">
+                            <li>
+                                <a
+                                    href="/politica-de-privacidad"
+                                    class="hover:text-white transition-colors"
+                                    >Política de Privacidad</a>
+                            </li>
+                            <li>
+                                <a
+                                    href="/aviso-legal"
+                                    class="hover:text-white transition-colors"
+                                    >Aviso Legal</a>
+                            </li>
+                            <li>
+                                <a
+                                    href="/politica-de-cookies"
+                                    class="hover:text-white transition-colors"
+                                    >Política de Cookies</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </footer>
     </body>
 </html>
