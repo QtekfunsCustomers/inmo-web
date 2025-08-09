@@ -1,56 +1,32 @@
 ---
-//  archivo: src/pages/index.astro
+// archivo: src/pages/index.astro
 import Layout from "../layouts/Layout.astro";
 import PropertyCard from '../components/PropertyCard.astro';
+import LeadForm from "../components/LeadForm.astro"; // <-- IMPORTANTE: Añadimos la importación del formulario
 ---
 
-<Layout title="Inicio - Inversiones Inmobiliarias">
-	<section
-		class="relative h-[60vh] bg-slate-900 text-white flex items-center justify-center"
-	>
-		<img
-			src="/images/skyline.jpg"
-			alt="Edificio de oficinas moderno"
-			class="absolute top-0 left-0 w-full h-full object-cover opacity-30"
-		/>
-		<div class="relative z-10 text-center max-w-3xl">
-			<h1 class="text-5xl md:text-6xl font-bold mb-4">
-				Inversiones Inmobiliarias que Definen el Futuro
-			</h1>
-			<p class="text-lg md:text-xl text-slate-300">
-				Especialistas en la compra, venta y alquiler de edificios y
-				locales comerciales de alto valor.
-			</p>
-		</div>
-	</section>
+<Layout title="Inversiones Inmobiliarias de Alto Valor">
 
-	<section class="py-16 bg-slate-50">
-		<div class="container mx-auto px-4">
-			<h2 class="text-4xl font-bold text-center mb-12 text-slate-800">
-				Inmuebles Destacados
-			</h2>
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-			</div>
-		</div>
-	</section>
-</Layout>
-<Layout title="Inicio - Inversiones Inmobiliarias">
-
-  <section class="relative h-[70vh] bg-slate-900 text-white flex items-center justify-center">
-    <img src="/images/hero-background.jpg" alt="Skyline de una ciudad moderna" class="absolute top-0 left-0 w-full h-full object-cover opacity-25">
-    <div class="relative z-10 text-center max-w-4xl px-4">
-      <h1 class="text-5xl md:text-7xl font-bold mb-4">Inversiones Inmobiliarias que Definen el Futuro</h1>
-      <p class="text-lg md:text-xl text-slate-300">Especialistas en la compra, venta y alquiler de edificios y locales comerciales de alto valor.</p>
+  <section class="relative h-[80vh] w-full bg-gray-600">
+    <img src="/images/hero-background.jpg" alt="Edificio corporativo moderno" class="absolute inset-0 w-full h-full object-cover">
+    <div class="relative h-full flex items-center justify-start container mx-auto px-4">
+      <div class="bg-white/95 backdrop-blur-sm p-8 md:p-12 rounded-lg max-w-xl">
+        <h1 class="text-4xl md:text-5xl font-bold text-slate-900 leading-tight mb-4">La Inversión Inmobiliaria que Impulsa su Crecimiento</h1>
+        <p class="text-lg text-slate-600 mb-8">Especialistas en la localización y gestión de activos comerciales de alto rendimiento.</p>
+        <div class="flex gap-4">
+          <a href="#propiedades" class="bg-blue-800 hover:bg-blue-900 text-white font-bold py-3 px-6 rounded-md">Ver Propiedades</a>
+          <a href="#contacto" class="bg-slate-200 hover:bg-slate-300 text-slate-800 font-bold py-3 px-6 rounded-md">Contactar</a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <section class="py-20 bg-slate-100">
+  <section id="propiedades" class="py-20 bg-slate-100">
     <div class="container mx-auto px-4">
       <div class="text-center mb-16">
         <h2 class="text-4xl font-bold text-slate-800">Propiedades Destacadas</h2>
         <p class="text-lg text-slate-500 mt-2">Una selección de nuestras mejores oportunidades de inversión.</p>
       </div>
-
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         <PropertyCard
           imgSrc="/images/edificio1.jpg"
@@ -73,6 +49,29 @@ import PropertyCard from '../components/PropertyCard.astro';
           location="Barrio de Salamanca, Madrid"
           price="8.500.000 €"
         />
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" class="py-20 bg-white">
+    <div class="container mx-auto px-4">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+        <div class="prose prose-lg max-w-none">
+          <h2 class="text-4xl font-bold text-slate-900">Expertos en el Sector Inmobiliario Comercial</h2>
+          <p>Un servicio de calidad, serio, eficaz, transparente y enfocado al cliente, con el objetivo de ayudarle en su necesidad.</p>
+          <ul>
+            <li>Más de 20 años de experiencia en el sector.</li>
+            <li>Acceso a oportunidades de inversión exclusivas.</li>
+            <li>Asesoramiento integral durante todo el proceso.</li>
+          </ul>
+          <p><strong>Y solo pagas, si conseguimos tu objetivo.</strong></p>
+        </div>
+
+        <div>
+          <LeadForm />
+        </div>
+
       </div>
     </div>
   </section>

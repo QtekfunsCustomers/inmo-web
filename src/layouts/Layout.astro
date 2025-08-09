@@ -2,7 +2,7 @@
 //  archivo: src/layouts/Layout.astro
 
 // 👇 Fíjate que la ruta coincide con tu estructura de carpetas
-import "../styles/tailwind.css";
+import '../styles/global.css'
 
 // Esto permite que cada página tenga un título diferente
 export interface Props {
@@ -19,6 +19,14 @@ const { title } = Astro.props;
         <meta name="viewport" content="width=device-width" />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <title>{title} | INMO-WEB</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Inter:wght@400;600&display=swap"
+            rel="stylesheet"
+        />
+
         <style>
             /* Opcional: Asigna las fuentes a todo el sitio por defecto */
             body {

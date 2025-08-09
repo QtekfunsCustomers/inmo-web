@@ -1,84 +1,47 @@
 ---
 // src/pages/contacto.astro
 import Layout from "../layouts/Layout.astro";
+//https://formspree.io/f/xjkojkvr
 ---
 
 <Layout title="Contacto">
-    <div class="container mx-auto px-4 py-8">
-        <h1 class="text-4xl font-bold text-center mb-6">
-            Contacta con Nosotros
-        </h1>
-        <p class="text-center text-gray-600 mb-8">
-            ¿Interesado en una propiedad? Rellena el formulario y te
-            contactaremos.
-        </p>
+  <div class="bg-white py-20">
+    <div class="container mx-auto px-4 max-w-2xl">
 
-        <form
-            action="https://formspree.io/f/xjkojkvr"
-            method="POST"
-            class="max-w-xl mx-auto bg-white p-8 rounded-lg shadow-md"
-        >
-            <input
-                type="hidden"
-                name="_next"
-                value="https://inmo-web.netlify.app/gracias"
-            />
+      <div class="text-center mb-12">
+        <h1 class="text-5xl font-bold text-slate-900">Hablemos</h1>
+        <p class="text-lg text-slate-500 mt-4">Complete el formulario y nuestro equipo se pondrá en contacto con usted.</p>
+      </div>
 
-            <div class="mb-4">
-                <label
-                    class="block text-gray-700 text-sm font-bold mb-2"
-                    for="name"
-                >
-                    Nombre Completo
-                </label>
-                <input
-                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700"
-                    id="name"
-                    type="text"
-                    name="name"
-                    required
-                />
-            </div>
+      <form
+        action="https://formspree.io/f/xjkojkvr"
+        method="POST"
+        class="space-y-6"
+      >
+        <input type="hidden" name="_next" value="https://inmo-web.netlify.app/gracias">
 
-            <div class="mb-4">
-                <label
-                    class="block text-gray-700 text-sm font-bold mb-2"
-                    for="email"
-                >
-                    Email
-                </label>
-                <input
-                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700"
-                    id="email"
-                    type="email"
-                    name="email"
-                    required
-                />
-            </div>
+        <div>
+          <label for="name" class="sr-only">Nombre Completo</label>
+          <input type="text" name="name" id="name" placeholder="Nombre Completo" required class="w-full p-4 border border-slate-300 rounded-md focus:ring-2 focus:ring-blue-500 transition">
+        </div>
 
-            <div class="mb-6">
-                <label
-                    class="block text-gray-700 text-sm font-bold mb-2"
-                    for="message"
-                >
-                    Mensaje
-                </label>
-                <textarea
-                    class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700"
-                    id="message"
-                    name="message"
-                    rows="5"
-                    required></textarea>
-            </div>
+        <div>
+          <label for="email" class="sr-only">Email</label>
+          <input type="email" name="email" id="email" placeholder="Email" required class="w-full p-4 border border-slate-300 rounded-md focus:ring-2 focus:ring-blue-500 transition">
+        </div>
 
-            <div class="text-center">
-                <button
-                    class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-full"
-                    type="submit"
-                >
-                    Enviar Mensaje
-                </button>
-            </div>
-        </form>
+        <div>
+          <label for="message" class="sr-only">Mensaje</label>
+          <textarea name="message" id="message" rows="6" placeholder="Su mensaje..." required class="w-full p-4 border border-slate-300 rounded-md focus:ring-2 focus:ring-blue-500 transition"></textarea>
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold py-3 px-12 rounded-full text-lg transition-transform duration-300 hover:scale-105">
+            Enviar
+          </button>
+        </div>
+      </form>
+
     </div>
+  </div>
 </Layout>
