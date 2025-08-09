@@ -1,14 +1,80 @@
 ---
 //  archivo: src/pages/index.astro
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import PropertyCard from '../components/PropertyCard.astro';
 ---
-<Layout title="Inicio">
-  <main>
-    <h1 class="text-4xl font-bold text-center text-blue-800 p-8">
-      Bienvenido a INMO-WEB
-    </h1>
-    <p class="text-center">
-      Tu próxima casa te está esperando.
-    </p>
-  </main>
+
+<Layout title="Inicio - Inversiones Inmobiliarias">
+	<section
+		class="relative h-[60vh] bg-slate-900 text-white flex items-center justify-center"
+	>
+		<img
+			src="/images/skyline.jpg"
+			alt="Edificio de oficinas moderno"
+			class="absolute top-0 left-0 w-full h-full object-cover opacity-30"
+		/>
+		<div class="relative z-10 text-center max-w-3xl">
+			<h1 class="text-5xl md:text-6xl font-bold mb-4">
+				Inversiones Inmobiliarias que Definen el Futuro
+			</h1>
+			<p class="text-lg md:text-xl text-slate-300">
+				Especialistas en la compra, venta y alquiler de edificios y
+				locales comerciales de alto valor.
+			</p>
+		</div>
+	</section>
+
+	<section class="py-16 bg-slate-50">
+		<div class="container mx-auto px-4">
+			<h2 class="text-4xl font-bold text-center mb-12 text-slate-800">
+				Inmuebles Destacados
+			</h2>
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+			</div>
+		</div>
+	</section>
+</Layout>
+<Layout title="Inicio - Inversiones Inmobiliarias">
+
+  <section class="relative h-[70vh] bg-slate-900 text-white flex items-center justify-center">
+    <img src="/images/hero-background.jpg" alt="Skyline de una ciudad moderna" class="absolute top-0 left-0 w-full h-full object-cover opacity-25">
+    <div class="relative z-10 text-center max-w-4xl px-4">
+      <h1 class="text-5xl md:text-7xl font-bold mb-4">Inversiones Inmobiliarias que Definen el Futuro</h1>
+      <p class="text-lg md:text-xl text-slate-300">Especialistas en la compra, venta y alquiler de edificios y locales comerciales de alto valor.</p>
+    </div>
+  </section>
+
+  <section class="py-20 bg-slate-100">
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-slate-800">Propiedades Destacadas</h2>
+        <p class="text-lg text-slate-500 mt-2">Una selección de nuestras mejores oportunidades de inversión.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <PropertyCard
+          imgSrc="/images/edificio1.jpg"
+          category="Edificio de Oficinas"
+          title="Edificio Bulevar Central"
+          location="Paseo de la Castellana, Madrid"
+          price="12.000.000 €"
+        />
+        <PropertyCard
+          imgSrc="/images/local1.jpg"
+          category="Local Comercial"
+          title="Local en Esquina Gran Vía"
+          location="Calle Gran Vía, Madrid"
+          price="2.500.000 €"
+        />
+        <PropertyCard
+          imgSrc="/images/edificio2.jpg"
+          category="Edificio Residencial"
+          title="Edificio Clásico en Salamanca"
+          location="Barrio de Salamanca, Madrid"
+          price="8.500.000 €"
+        />
+      </div>
+    </div>
+  </section>
+
 </Layout>

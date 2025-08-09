@@ -2,35 +2,54 @@
 //  archivo: src/layouts/Layout.astro
 
 // 👇 Fíjate que la ruta coincide con tu estructura de carpetas
-import '../styles/tailwind.css';
+import "../styles/tailwind.css";
 
 // Esto permite que cada página tenga un título diferente
 export interface Props {
-	title: string;
+    title: string;
 }
 const { title } = Astro.props;
 ---
+
 <!doctype html>
 <html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Sitio web de Inmobiliaria INMO-WEB" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<title>{title} | INMO-WEB</title>
-	</head>
-	<body class="bg-slate-100 text-gray-800">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="description" content="Sitio web de Inmobiliaria INMO-WEB" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <title>{title} | INMO-WEB</title>
+        <style>
+            /* Opcional: Asigna las fuentes a todo el sitio por defecto */
+            body {
+                font-family: "Inter", sans-serif;
+            }
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+                font-family: "Poppins", sans-serif;
+            }
+        </style>
+    </head>
+    <body class="bg-slate-100 text-gray-800">
+        <header class="bg-white shadow-md sticky top-0">
+            <nav
+                class="container mx-auto px-4 py-3 flex justify-between items-center"
+            >
+                <a href="/" class="text-xl font-bold text-blue-700">INMO-WEB</a>
+                <div>
+                    <a href="/" class="px-3 hover:text-blue-700">Inicio</a>
+                    <a href="/contacto" class="px-3 hover:text-blue-700"
+                        >Contacto</a
+                    >
+                </div>
+            </nav>
+        </header>
 
-    <header class="bg-white shadow-md sticky top-0">
-      <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
-        <a href="/" class="text-xl font-bold text-blue-700">INMO-WEB</a>
-        <div>
-          <a href="/" class="px-3 hover:text-blue-700">Inicio</a>
-          <a href="/contacto" class="px-3 hover:text-blue-700">Contacto</a>
-        </div>
-      </nav>
-    </header>
-
-		<slot /> {/* Aquí se insertará el contenido de cada página */}
-	</body>
+        <slot />
+        {/* Aquí se insertará el contenido de cada página */}
+    </body>
 </html>
