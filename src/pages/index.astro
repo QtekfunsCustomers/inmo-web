@@ -3,6 +3,7 @@
 import Layout from "../layouts/Layout.astro";
 import SuccessStoryCard from "../components/SuccessStoryCard.astro";
 import LeadForm from "../components/LeadForm.astro";
+import ServiceCard from "../components/ServiceCard.astro";
 ---
 
 <Layout title="Inversiones Inmobiliarias de Alto Valor">
@@ -39,6 +40,132 @@ import LeadForm from "../components/LeadForm.astro";
                         >Contactar</a
                     >
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="quienes-somos" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="w-full h-96 rounded-lg overflow-hidden">
+                    <img
+                        src="/images/quienes-somos.jpg"
+                        alt="Equipo de Inmo-Web en la oficina"
+                        class="w-full h-full object-cover"
+                    />
+                </div>
+
+                <div class="flex flex-col h-full">
+                    <div>
+                        <h2 class="text-4xl font-bold text-slate-900">
+                            Quiénes Somos
+                        </h2>
+                        <p class="text-lg text-slate-600 mt-6">
+                            Inmo-Spain es una empresa de servicios inmobiliarios
+                            especializada en la gestión de activos inmobiliarios
+                            para clientes nacionales e internacionales que
+                            quieran invertir en España.
+                        </p>
+                        <p class="text-lg text-slate-600 mt-4">
+                            Contamos con un equipo de profesionales con más de
+                            20 años de experiencia en el sector y con una clara
+                            vocación de servicio al cliente, basado en la
+                            confianza, la transparencia y la profesionalidad.
+                        </p>
+                    </div>
+
+                    <div class="mt-8">
+                        <a
+                            href="#contacto"
+                            class="inline-block bg-blue-800 hover:bg-blue-900 text-white font-bold py-3 px-6 rounded-md no-underline"
+                        >
+                            Saber más
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicios" class="py-20 bg-slate-100">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-slate-800">
+                    Nuestros Servicios
+                </h2>
+                <p class="text-lg text-slate-500 mt-2">
+                    Ofrecemos un asesoramiento integral para maximizar su
+                    inversión.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <ServiceCard
+                    title="Gestión de Inversiones"
+                    description="Búsqueda de oportunidades de inversión y asesoramiento en la compra de activos inmobiliarios."
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-trending-up"
+                        ><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"
+                        ></polyline><polyline points="16 7 22 7 22 13"
+                        ></polyline></svg
+                    >
+                </ServiceCard>
+
+                <ServiceCard
+                    title="Gestión de Activos"
+                    description="Servicios de gestión de activos inmobiliarios para optimizar la rentabilidad y el valor de los mismos."
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-building-2"
+                        ><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18"
+                        ></path><path
+                            d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"
+                        ></path><path
+                            d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"
+                        ></path><path d="M10 6h4"></path><path d="M10 10h4"
+                        ></path><path d="M10 14h4"></path><path d="M10 18h4"
+                        ></path></svg
+                    >
+                </ServiceCard>
+
+                <ServiceCard
+                    title="Comercialización"
+                    description="Comercialización de todo tipo de activos inmobiliarios, con un plan de marketing personalizado para cada caso."
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="lucide lucide-megaphone"
+                        ><path d="m3 11 18-5v12L3 14v-3z"></path><path
+                            d="M11.6 16.8a3 3 0 1 1-5.8-1.6"></path></svg
+                    >
+                </ServiceCard>
             </div>
         </div>
     </section>
