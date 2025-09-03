@@ -94,7 +94,9 @@ const { title } = Astro.props;
         </header>
         </header>
 
-        <slot />
+        <main class="mt-16">
+            <slot />
+        </main>
         {/* Aquí se insertará el contenido de cada página */}
         <footer class="bg-slate-900 text-slate-400">
             <div class="container mx-auto px-4 py-8">
